@@ -2,15 +2,27 @@
 /**
  * puts2 - function to print every other character
  * @str: parameter of current character
+ * Return: prints
  */
 void puts2(char *str)
 {
 	int i = 0;
+	int t = 0;
+	char *y = str;
+	int n;
 
-	while (str[i] != '\0')
+	while (*y != '\0')
 	{
-		_putchar(str[i]);
-		i += 2;
+		y++;
+		i++;
+	}
+	t = i - 1;
+	for (n = 0; n <= t; n++)
+	{
+		if (n % 2 == 0)
+		{
+			_putchar(str[n]);
+		}
 	}
 	_putchar('\n');
 }
