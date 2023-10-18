@@ -4,40 +4,32 @@
 /**
  * main - generates random password
  * program 101-crackme.
- * Return: Always 0
+ * Return: 0 on success, 1 on erro
  */
 int main(void)
 {
-	char password[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+	int sum = 0;
+	char c, pass[100];
+
+	int i = 0;
 
 	srand(time(0));
-
-	while (sum <2772)
+	while (sum <32772)
 	{
-		password[index] = 33 + rand() % 94;
-		sum += password[index++];
-	}
-
-	password[index] = '\0';
-	if (sum != 2772)
-	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum -2772) / 2;
-
-		if ((sum -2772) % 2 != 0)
-			diff_half1++;
-
-		for (index = 0; password[index]; index++)
+		c = rand() % 128;
+		sum += c;
+		if (sum > 2772)
 		{
-			if (password[index] >= (33 + diff_half1))
-			{
-				password[index] -= diff_half2;
-				break;
-			}
+			sum -= c;
+			break;
 		}
+		pass[i] = c;
+		i++;
 	}
-	printf("%s", password);
+	c = 2772 - sum;
+	i++;
+	pass[i] = '\0';
+	printf("%s\n", pass);
+
 	return (0);
 }
-
