@@ -1,0 +1,27 @@
+#include "main.h"
+/**
+ * _strncpy - this is a function that act like strncpy
+ * @dest: first pointer character
+ * @src: second pointer character
+ * @n: an integer
+ * Return: start
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	char *start = dest;
+
+	while (n > 0 && *src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		n--;
+	}
+	while (n > 0)
+	{
+		*dest = '\0';
+		dest++;
+		n--;
+	}
+	return (start);
+}
