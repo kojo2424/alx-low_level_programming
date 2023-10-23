@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- *_ strchr - The function
+ *_strchr - The function
  * @s: 1st parameter
  * @c: 2nd parameter
  * Return: p or NULL
