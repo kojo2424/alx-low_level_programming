@@ -1,6 +1,7 @@
-#include "3 - calc.c"
+#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "function_pointers.h"
 /**
  * main - ..
  * @argc: ..
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exist(98);
+		exit(98);
 	}
 	oprt = get_op_func(argv[2]);
 
